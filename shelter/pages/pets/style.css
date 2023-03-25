@@ -1,0 +1,284 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("/shelter/assets/fonts/georgia/georgia-regular.ttf") format("truetype"),
+    url("/shelter/assets/fonts/georgia/Georgia.woff2")format('woff2'),
+    url("/shelter/assets/fonts/georgia/Georgia.woff") format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arial";
+  src: url("/shelter/assets/fonts/arial/arial-regular.ttf") format("truetype"),
+    url("/shelter/assets/fonts/arial/ArialMT.woff2")format('woff2'),
+    url("/shelter/assets/fonts/arial/ArialMT.woff")format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arial";
+  src: url("/shelter/assets/fonts/arial/arial-italic.ttf") format("truetype"),
+    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff2")format('woff2'),
+    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff")format('woff');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1280px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+}
+
+header {
+  padding: 30px 40px 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__title {
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.logo__subtitle {
+  font-family: 'Arial';
+  font-size: 13px;
+  line-height: 115.3%;
+  letter-spacing: 0.1em;
+  color: #292929;
+}
+
+.navigation__list {
+  font-family: "Arial";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.25rem;
+}
+
+.navigation__link {
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
+}
+
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+section {
+  padding: 80px 40px 100px 40px;
+}
+
+.pets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  text-align: center;
+  background: #F6F6F6;
+}
+
+.pets__cards {
+  padding: 0 53px;
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  grid-template-rows: repeat(2, 435px);
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.pets__card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FAFAFA;
+}
+
+.pets__card img {
+  width: 270px;
+  height: 270px;
+}
+
+.pets__card span {
+  padding: 30px;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.button {
+  font-family: "Georgia";
+  border-radius: 100px;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  border: 2px solid #F1CDB3;
+}
+
+.button_bordered {
+  width: 187px;
+  height: 52px;
+  background: #FAFAFA;
+}
+
+.pets__pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.button-paginator {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  font-family: 'Georgia';
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  background: #F6F6F6;
+}
+
+.button-paginator_active {
+  background: #F1CDB3;
+}
+
+.button-paginator_inactive {
+  color: #CDCDCD;
+  border: 2px solid #CDCDCD;
+}
+
+.footer__wrapper {
+  background: url('/shelter/assets/images/start-screen-background.jpg'),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  padding: 40px 40px 0px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__content {
+  padding-top: 15px;
+  max-width: 61%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__content h3 {
+  color: #FFFFFF;
+}
+
+.footer__questions {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.footer__location {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.footer__questions__item,
+.footer__location__item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
+.icon_email {
+  width: 40px;
+  height: 26px;
+  background: center / contain no-repeat url('/shelter/assets/icons/mail.svg');
+}
+
+.icon_phone {
+  width: 40px;
+  height: 32px;
+  background: center / contain no-repeat url('/shelter/assets/icons/phone.svg');
+}
+
+.icon_location {
+  width: 22px;
+  height: 32px;
+  background: center / contain no-repeat url('/shelter/assets/icons/pin.svg');
+}
+
+.footer__image {
+  width: 300px;
+  height: 310px;
+  background: center / contain no-repeat url('/shelter/assets/images/footer-puppy.png');
+}
