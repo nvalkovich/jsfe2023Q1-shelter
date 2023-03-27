@@ -31,6 +31,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -59,6 +60,18 @@ ul {
   list-style: none;
 }
 
+a:focus,
+a:active {
+  outline: none
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -66,25 +79,46 @@ img {
 
 body {
   margin: 0 auto;
-  max-width: 1280px;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
 }
 
-header {
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}
+
+.container_header {
   padding: 30px 40px 30px 40px;
+  width: 1280px;
+}
+
+.header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
+  color: #545454;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.01);
 }
 
 .logo__title {
@@ -114,8 +148,28 @@ header {
   font-size: 15px;
   line-height: 160%;
   color: #545454;
+  cursor: pointer;
+  transition: 0.2s;
+  padding-bottom: 3px;
 }
 
+.navigation__link:link,
+.navigation__link:visited {
+  color: #545454;
+}
+
+.navigation__link:hover {
+  color: #292929;
+}
+
+.navigation__link:active,
+.navigation__link_active,
+.navigation__link:active:hover,
+.navigation__link_active:hover {
+  color:#292929;
+  border-bottom: 3px solid #F1CDB3;
+  cursor: auto;
+}
 
 h3 {
   font-size: 35px;
@@ -129,13 +183,19 @@ section {
 }
 
 .pets {
+  background: #F6F6F6;
+  display: flex;
+  justify-content: center;
+}
+
+.container_pets {
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
   text-align: center;
-  background: #F6F6F6;
 }
 
 .pets__cards {
@@ -154,6 +214,7 @@ section {
   flex-direction: column;
   align-items: center;
   background: #FAFAFA;
+  border-radius: 9px;
 }
 
 .pets__card img {
@@ -169,6 +230,13 @@ section {
   color: #545454;
 }
 
+.pets__card:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  transition: 0.5s;
+  background: #FFFFFF;
+}
+
 .button {
   font-family: "Georgia";
   border-radius: 100px;
@@ -177,12 +245,19 @@ section {
   letter-spacing: 0.06em;
   color: #292929;
   border: 2px solid #F1CDB3;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .button_bordered {
   width: 187px;
   height: 52px;
   background: #FAFAFA;
+}
+
+.pets__card:hover .button_bordered {
+  background: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .pets__pagination {
@@ -202,24 +277,43 @@ section {
   letter-spacing: 0.06em;
   color: #292929;
   background: #F6F6F6;
+  cursor: pointer;
 }
 
-.button-paginator_active {
+.button-paginator_current,
+.button-paginator_current:hover {
   background: #F1CDB3;
+  cursor: auto;
 }
 
-.button-paginator_inactive {
+.button-paginator_active:hover {
+  background: #FDDCC4;
+  border-color: #FDDCC4;
+}
+
+.button-paginator_inactive,
+.button-paginator:disabled {
   color: #CDCDCD;
   border: 2px solid #CDCDCD;
+  cursor: not-allowed;
 }
 
-.footer__wrapper {
-  background: url('/shelter/assets/images/start-screen-background.jpg'),
-    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+.container_footer {
   padding: 40px 40px 0px 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.footer {
+  background: url('/shelter/assets/images/noise_transparent@2x.png') repeat,
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.container_footer {
+  width: 1280px;
 }
 
 .footer__content {
@@ -232,6 +326,10 @@ section {
 
 .footer__content h3 {
   color: #FFFFFF;
+}
+
+.footer__content a {
+  color: #F1CDB3;
 }
 
 .footer__questions {
@@ -257,6 +355,13 @@ section {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
+  cursor: pointer;
+}
+
+.footer__questions__item:hover,
+.footer__location__item:hover {
+  transition: 0.5s;
+  color: #CDCDCD;
 }
 
 .icon_email {
@@ -265,10 +370,24 @@ section {
   background: center / contain no-repeat url('/shelter/assets/icons/mail.svg');
 }
 
+.footer__questions__item:hover .icon_email {
+  transition: 0.5s;
+  width: 40px;
+  height: 26px;
+  background: center / contain no-repeat url('/shelter/assets/icons/mail_hover.svg');
+}
+
 .icon_phone {
   width: 40px;
   height: 32px;
   background: center / contain no-repeat url('/shelter/assets/icons/phone.svg');
+}
+
+.footer__questions__item:hover .icon_phone {
+  transition: 0.5s;
+  width: 40px;
+  height: 32px;
+  background: center / contain no-repeat url('/shelter/assets/icons/phone_hover.svg');
 }
 
 .icon_location {
@@ -277,8 +396,14 @@ section {
   background: center / contain no-repeat url('/shelter/assets/icons/pin.svg');
 }
 
+.footer__location__item:hover .icon_location {
+  width: 22px;
+  height: 32px;
+  background: center / contain no-repeat url('/shelter/assets/icons/pin_hover.svg');
+}
+
 .footer__image {
   width: 300px;
   height: 310px;
-  background: center / contain no-repeat url('/shelter/assets/images/footer-puppy.png');
+  background: no-repeat url('/shelter/assets/images/footer-puppy.png');
 }
