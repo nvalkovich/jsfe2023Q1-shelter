@@ -84,7 +84,7 @@ body {
   font-weight: 400;
 }
 
-.main-wrapper {
+.main {
   display: flex;
   flex-direction: column;
 }
@@ -572,12 +572,14 @@ h3 {
 }
 
 .footer__location__item:hover .icon_location {
+  transition: 0.5s;
   width: 22px;
   height: 32px;
   background: center / contain no-repeat url('/shelter/assets/icons/pin_hover.svg');
 }
 
 .footer__image {
+  transition: 0.5s;
   width: 300px;
   height: 310px;
   background: no-repeat url('/shelter/assets/images/footer-puppy.png');
