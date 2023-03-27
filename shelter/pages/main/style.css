@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Georgia";
-  src: url("/shelter/assets/fonts/georgia/georgia-regular.ttf") format("truetype"),
-    url("/shelter/assets/fonts/georgia/Georgia.woff2")format('woff2'),
-    url("/shelter/assets/fonts/georgia/Georgia.woff") format('woff');
+  src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("truetype"),
+    url("../../assets/fonts/georgia/Georgia.woff2")format('woff2'),
+    url("../../assets/fonts/georgia/Georgia.woff") format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: "Arial";
-  src: url("/shelter/assets/fonts/arial/arial-regular.ttf") format("truetype"),
-    url("/shelter/assets/fonts/arial/ArialMT.woff2")format('woff2'),
-    url("/shelter/assets/fonts/arial/ArialMT.woff")format('woff');
+  src: url("../../assets/fonts/arial/arial-regular.ttf") format("truetype"),
+    url("../../assets/fonts/arial/ArialMT.woff2")format('woff2'),
+    url("../../assets/fonts/arial/ArialMT.woff")format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -20,9 +20,9 @@
 
 @font-face {
   font-family: "Arial";
-  src: url("/shelter/assets/fonts/arial/arial-italic.ttf") format("truetype"),
-    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff2")format('woff2'),
-    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff")format('woff');
+  src: url("../../assets/fonts/arial/arial-italic.ttf") format("truetype"),
+    url("../../assets/fonts/arial/Arial-ItalicMT.woff2")format('woff2'),
+    url("../../assets/fonts/arial/Arial-ItalicMT.woff")format('woff');
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -91,7 +91,7 @@ body {
 
 .start-screen__container,
 .footer {
-  background: url('/shelter/assets/images/noise_transparent@2x.png') repeat,
+  background: url('../../assets/images/noise_transparent@2x.png') repeat,
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 }
 
@@ -232,7 +232,7 @@ body {
 .start-screen__image {
   width: 698px;
   height: 728px;
-  background: no-repeat url('/shelter/assets/images/start-screen-puppy.png');
+  background: no-repeat url('../../assets/images/start-screen-puppy.png');
 }
 
 section {
@@ -254,7 +254,7 @@ section {
 .about__image {
   width: 300px;
   height: 408px;
-  background: center / contain no-repeat url('/shelter/assets/images/about-pets.png');
+  background: center / contain no-repeat url('../../assets/images/about-pets.png');
 }
 
 .about__content {
@@ -310,7 +310,7 @@ h3 {
   border-radius: 100px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
-  background: center no-repeat url('/shelter/assets/icons/Arrow.svg');
+  background: center no-repeat url('../../assets/icons/Arrow.svg');
   transition: 0.5s;
 }
 
@@ -428,7 +428,7 @@ h3 {
 }
 
 .donation__image {
-  background: center / contain no-repeat url('/shelter/assets/images/donation-dog.png');
+  background: center / contain no-repeat url('../../assets/images/donation-dog.png');
   width: 505px;
   height: 261px;
 }
@@ -472,7 +472,7 @@ h3 {
 .icon_card-number {
   width: 30px;
   height: 23px;
-  background: center / contain no-repeat url('/shelter/assets/icons/credit-card.svg');
+  background: center / contain no-repeat url('../../assets/icons/credit-card.svg');
 }
 
 .donation__text {
@@ -542,45 +542,45 @@ h3 {
 .icon_email {
   width: 40px;
   height: 26px;
-  background: center / contain no-repeat url('/shelter/assets/icons/mail.svg');
+  background: center / contain no-repeat url('../../assets/icons/mail.svg');
 }
 
 .footer__questions__item:hover .icon_email {
   transition: 0.5s;
   width: 40px;
   height: 26px;
-  background: center / contain no-repeat url('/shelter/assets/icons/mail_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/mail_hover.svg');
 }
 
 .icon_phone {
   width: 40px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/phone.svg');
+  background: center / contain no-repeat url('../../assets/icons/phone.svg');
 }
 
 .footer__questions__item:hover .icon_phone {
   transition: 0.5s;
   width: 40px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/phone_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/phone_hover.svg');
 }
 
 .icon_location {
   width: 22px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/pin.svg');
+  background: center / contain no-repeat url('../../assets/icons/pin.svg');
 }
 
 .footer__location__item:hover .icon_location {
   transition: 0.5s;
   width: 22px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/pin_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/pin_hover.svg');
 }
 
 .footer__image {
   transition: 0.5s;
   width: 300px;
   height: 310px;
-  background: no-repeat url('/shelter/assets/images/footer-puppy.png');
+  background: no-repeat url('../../assets/images/footer-puppy.png');
 }

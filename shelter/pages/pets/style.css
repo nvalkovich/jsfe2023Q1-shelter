@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Georgia";
-  src: url("/shelter/assets/fonts/georgia/georgia-regular.ttf") format("truetype"),
-    url("/shelter/assets/fonts/georgia/Georgia.woff2")format('woff2'),
-    url("/shelter/assets/fonts/georgia/Georgia.woff") format('woff');
+  src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("truetype"),
+    url("../../assets/fonts/georgia/Georgia.woff2")format('woff2'),
+    url("../../assets/fonts/georgia/Georgia.woff") format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: "Arial";
-  src: url("/shelter/assets/fonts/arial/arial-regular.ttf") format("truetype"),
-    url("/shelter/assets/fonts/arial/ArialMT.woff2")format('woff2'),
-    url("/shelter/assets/fonts/arial/ArialMT.woff")format('woff');
+  src: url("../../assets/fonts/arial/arial-regular.ttf") format("truetype"),
+    url("../../assets/fonts/arial/ArialMT.woff2")format('woff2'),
+    url("../../assets/fonts/arial/ArialMT.woff")format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -20,9 +20,9 @@
 
 @font-face {
   font-family: "Arial";
-  src: url("/shelter/assets/fonts/arial/arial-italic.ttf") format("truetype"),
-    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff2")format('woff2'),
-    url("/shelter/assets/fonts/arial/Arial-ItalicMT.woff")format('woff');
+  src: url("../../assets/fonts/arial/arial-italic.ttf") format("truetype"),
+    url("../../assets/fonts/arial/Arial-ItalicMT.woff2")format('woff2'),
+    url("../../assets/fonts/arial/Arial-ItalicMT.woff")format('woff');
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -306,7 +306,7 @@ section {
 }
 
 .footer {
-  background: url('/shelter/assets/images/noise_transparent@2x.png') repeat,
+  background: url('../../assets/images/noise_transparent@2x.png') repeat,
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   display: flex;
   justify-content: center;
@@ -367,43 +367,43 @@ section {
 .icon_email {
   width: 40px;
   height: 26px;
-  background: center / contain no-repeat url('/shelter/assets/icons/mail.svg');
+  background: center / contain no-repeat url('../../assets/icons/mail.svg');
 }
 
 .footer__questions__item:hover .icon_email {
   transition: 0.5s;
   width: 40px;
   height: 26px;
-  background: center / contain no-repeat url('/shelter/assets/icons/mail_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/mail_hover.svg');
 }
 
 .icon_phone {
   width: 40px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/phone.svg');
+  background: center / contain no-repeat url('../../assets/icons/phone.svg');
 }
 
 .footer__questions__item:hover .icon_phone {
   transition: 0.5s;
   width: 40px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/phone_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/phone_hover.svg');
 }
 
 .icon_location {
   width: 22px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/pin.svg');
+  background: center / contain no-repeat url('../../assets/icons/pin.svg');
 }
 
 .footer__location__item:hover .icon_location {
   width: 22px;
   height: 32px;
-  background: center / contain no-repeat url('/shelter/assets/icons/pin_hover.svg');
+  background: center / contain no-repeat url('../../assets/icons/pin_hover.svg');
 }
 
 .footer__image {
   width: 300px;
   height: 310px;
-  background: no-repeat url('/shelter/assets/images/footer-puppy.png');
+  background: no-repeat url('../../assets/images/footer-puppy.png');
 }
