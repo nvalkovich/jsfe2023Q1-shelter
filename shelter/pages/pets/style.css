@@ -95,9 +95,13 @@ body {
   justify-content: center;
 }
 
+.container {
+  max-width: 1280px;
+  width: 100%;
+}
+
 .container_header {
-  padding: 30px 40px 30px 40px;
-  width: 1280px;
+  padding: 30px 40px;
 }
 
 .header__content {
@@ -107,18 +111,13 @@ body {
 }
 
 .logo {
-  color: #545454;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.logo:hover {
-  transform: scale(1.01);
+  color: #545454;
 }
 
 .logo__title {
@@ -168,7 +167,7 @@ body {
 .navigation__link_active:hover {
   color: #292929;
   border-bottom: 3px solid #F1CDB3;
-  cursor: auto;
+  cursor: default;
 }
 
 h3 {
@@ -189,12 +188,11 @@ section {
 }
 
 .container_pets {
-  max-width: 1280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 58px;
   text-align: center;
 }
 
@@ -209,12 +207,12 @@ section {
 
 .pets__card {
   width: 270px;
-  height: 435px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #FAFAFA;
   border-radius: 9px;
+  padding-bottom: 31px;
 }
 
 .pets__card img {
@@ -278,6 +276,7 @@ section {
   color: #292929;
   background: #F6F6F6;
   cursor: pointer;
+  transition: background 0.5s;
 }
 
 .button-paginator_current,
@@ -295,14 +294,7 @@ section {
 .button-paginator:disabled {
   color: #CDCDCD;
   border: 2px solid #CDCDCD;
-  cursor: not-allowed;
-}
-
-.container_footer {
-  padding: 40px 40px 0px 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  cursor: auto;
 }
 
 .footer {
@@ -313,7 +305,7 @@ section {
 }
 
 .container_footer {
-  padding: 38px 40px 0px 40px;
+  padding: 41px 40px 0px 40px;
   display: grid;
   grid-template-columns: 71% 1fr;
 }
@@ -361,7 +353,7 @@ section {
 .footer__questions__item:hover,
 .footer__location__item:hover {
   transition: 0.5s;
-  color: #CDCDCD;
+  color: #FDDCC4;
 }
 
 .icon_email {
@@ -370,24 +362,10 @@ section {
   background: center / contain no-repeat url('../../assets/icons/mail.svg');
 }
 
-.footer__questions__item:hover .icon_email {
-  transition: 0.5s;
-  width: 40px;
-  height: 26px;
-  background: center / contain no-repeat url('../../assets/icons/mail_hover.svg');
-}
-
 .icon_phone {
   width: 40px;
   height: 32px;
   background: center / contain no-repeat url('../../assets/icons/phone.svg');
-}
-
-.footer__questions__item:hover .icon_phone {
-  transition: 0.5s;
-  width: 40px;
-  height: 32px;
-  background: center / contain no-repeat url('../../assets/icons/phone_hover.svg');
 }
 
 .icon_location {
@@ -396,10 +374,18 @@ section {
   background: center / contain no-repeat url('../../assets/icons/pin.svg');
 }
 
+.footer__questions__item:hover .icon_email {
+  transition: 0.5s;
+  background: center / contain no-repeat url('../../assets/icons/mail_hover.svg');
+}
+
+.footer__questions__item:hover .icon_phone {
+  transition: 0.5s;
+  background: center / contain no-repeat url('../../assets/icons/phone_hover.svg');
+}
+
 .footer__location__item:hover .icon_location {
   transition: 0.5s;
-  width: 22px;
-  height: 32px;
   background: center / contain no-repeat url('../../assets/icons/pin_hover.svg');
 }
 
@@ -414,10 +400,7 @@ section {
     max-width: 85%;
   }
 
-  .pets__card:nth-last-child(1) {
-    display: none;
-  }
-
+  .pets__card:nth-last-child(1),
   .pets__card:nth-last-child(2) {
     display: none;
   }
@@ -465,7 +448,7 @@ section {
   .pets__cards {
     max-width: 80%;
     justify-content: space-between;
-    row-gap: 30px;
+    row-gap: 28px;
   }
 }
 
@@ -474,7 +457,7 @@ section {
     max-width: 100%;
     justify-content: center;
     column-gap: 39px;
-    padding-bottom: 10px;
+    padding-bottom: 9px;
   }
 }
 
@@ -484,8 +467,8 @@ section {
   }
 
   .container_footer {
-    padding: 15px 40px 0px 42px;
-    gap: 61px;
+    padding: 17px 44px 0px 45px;
+    gap: 62px;
   }
 
   section {
@@ -516,10 +499,11 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    cursor: pointer;
   }
 
   .burger__line {
-    border: 2px solid #F1CDB3;
+    border: 2px solid #000000;
   }
 }
 
@@ -569,10 +553,18 @@ section {
     padding: 15px 10px 0px 10px;
     gap: 39px;
   }
-  
+
   .footer__questions,
   .footer__location {
     align-items: center;
+  }
+
+  .pets {
+    padding: 42px 11px 42px 12px;
+  }
+
+  .pets__card {
+    padding-bottom: 32px;
   }
 
   .footer__content h3 {
@@ -593,16 +585,12 @@ section {
   }
 
   .burger-menu {
-    padding-top: 5px;
-    gap: 8px;
-  }
-
-  .burger__line {
-    border: 1px solid #F1CDB3;
+    padding-top: 3px;
+    gap: 7px;
   }
 
   section {
-    padding: 42px 25px 42px 25px;
+    padding: 42px 11px 42px 12px;
   }
 
   .footer__location {
@@ -612,8 +600,7 @@ section {
   }
 
   .footer__content {
-    gap: 39px;
+    gap: 36px;
     padding-left: 0px;
   }
 }
-
