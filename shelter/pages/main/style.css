@@ -803,6 +803,7 @@ h4 {
   .start-screen__description h2,
   .about__content h3 {
     text-align: center;
+    margin: 0 auto;
   }
 
   .start-screen__description {
