@@ -646,7 +646,10 @@ h4 {
   }
 
   section {
-    padding: 80px 30px 97px 30px;
+    padding-top: calc((100vw - 320px)/(768 - 320) * (80 - 42) + 42px);
+    padding-right: calc((100vw - 320px)/(768 - 320) * (30 - 25) + 25px);
+    padding-bottom: calc((100vw - 320px)/(768 - 320) * (97 - 38) + 38px);
+    padding-left: calc((100vw - 320px)/(768 - 320) * (30 - 25) + 25px);
   }
 
   h3 {
@@ -668,7 +671,7 @@ h4 {
 
   .pets__card span {
     padding: 30px;
-}
+  }
 
   .pets__slider {
     grid-template-columns: 1fr 85.5% 1fr;
@@ -703,7 +706,7 @@ h4 {
 
   .donation__image {
     padding-top: 0px;
-}
+  }
 
   .card-number {
     width: calc((100vw - 320px)/(768 - 320) * (349 - 281) + 281px);
@@ -797,6 +800,20 @@ h4 {
     gap: 40px;
   }
 
+  .start-screen__description h2,
+  .about__content h3 {
+    text-align: center;
+  }
+
+  .start-screen__description {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .about__content {
+    max-width: 80%;
+  }
+
   .help__list {
     max-width: 100%;
     grid-template-columns: repeat(auto-fill, 45%);
@@ -821,6 +838,10 @@ h4 {
     padding: 15px 10px 0px 10px;
     justify-content: center;
     gap: 42px;
+  }
+
+  .about__content {
+    max-width: 90%;
   }
 }
 
