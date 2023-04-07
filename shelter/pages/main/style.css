@@ -749,6 +749,7 @@ h4 {
 
 @media (width < 768px) {
   .overflow-hidden {
+    position: fixed;
     overflow: hidden;
   }
 
@@ -761,36 +762,34 @@ h4 {
   }
 
   .burger-wrapper {
+    overflow: hidden;
     position: absolute;
     right: -30px;
     top: -30px;
+    height: 100vh;
+    width: 100vh;
     display: flex;
     justify-content: end;
-    transition: background 0.5s ease-in-out;
+    z-index:-1;
+    transition: 0.4s;
   }
 
-  .burger {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    cursor: pointer;
-  }
-
-  .burger__icon {
+  .burger-icon {
     padding-top: calc((100vw - 320px)/(767 - 320) * (0 - 5) + 5px);
     position: absolute;
-    top: 45px;
-    right: 25px;
-    z-index: 2;
+    top: 15px;
+    right: 10px;
+    z-index: 10;
     width: 30px;
     height: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     transition: 0.5s;
+    cursor: pointer;
   }
 
-  .burger__line {
+  .burger-icon__line {
     border: 1px solid #F1CDB3;
   }
 
@@ -813,7 +812,12 @@ h4 {
     margin: auto;
   }
 
-  .burger__icon_active {
+  .burger-wrapper_active {
+    z-index: 2;
+    transform: translate(0%);
+  }
+
+  .burger-icon_active {
     transform: rotate(90deg);
   }
 
@@ -822,8 +826,6 @@ h4 {
   }
 
   .blackout {
-    height: 100vh;
-    width: 100vh;
     background-color: #00000075;
   }
 }
