@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.addEventListener('click', (e) => {
-    if (!e.composedPath().includes(burgerMenu) 
-    && !e.composedPath().includes(burgerIcon) 
-    && burgerMenu.classList.contains('burger__burger-menu_active')) {
+    if (!e.composedPath().includes(burgerMenu)
+      && !e.composedPath().includes(burgerIcon)
+      && burgerMenu.classList.contains('burger__burger-menu_active')) {
       toggleBurger();
     }
   })
-});
+})
+
 
