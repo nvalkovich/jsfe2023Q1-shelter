@@ -82,6 +82,15 @@ body {
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.blackout {
+  background-color: #00000075;
 }
 
 .main {
@@ -420,6 +429,116 @@ h3 {
   margin: auto;
 }
 
+.popup__wrapper {
+  display: none;
+}
+
+.popup__wrapper_active {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  z-index: 100;
+  transition: 0.4s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup__container {
+  width: 952px;
+  height: 552px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 44%;
+  left: 57%;
+  transform: translate(-57%, -44%);
+}
+
+.popup__button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 52px;
+  height: 52px;
+  background: center no-repeat url('../../assets/icons/popup-close.svg');
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup__button:hover {
+  background-color: #FDDCC4;
+}
+
+.popup__content {
+  margin-top: 60px;
+  width: 900px;
+  height: 500px;
+  background: #FAFAFA;
+  border-radius: 9px;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  justify-items: center;
+  align-items: center
+}
+
+.popup__image {
+  width: 500px;
+}
+
+.popup__pet-description,
+.popup__pet-name,
+.popup__pet-quality-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__pet-description {
+  padding-left: 40px;
+  padding-bottom: 30px;
+  gap: 42px;
+}
+
+.popup__pet-description p {
+  max-width: 96%;
+}
+
+.popup__pet-name {
+  gap: 10px;
+}
+
+.popup__pet-description p,
+.popup__pet-quality-list {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+.popup__pet-name h3,
+.popup__pet-name h4 {
+  color: #000000;
+}
+
+.popup__pet-quality-list {
+  gap: 11px;
+}
+
+.popup__pet-quality-list li::before {
+  content: "\2022";
+  color: #F1CDB3;
+  font-weight: bold;
+  display: inline-block;
+  width: 16px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
 .container_help {
   display: flex;
   flex-direction: column;
@@ -660,6 +779,41 @@ h4 {
     animation-name: move-backward;
     animation-duration: 1s;
   }
+
+  .popup__container {
+    width: 682px;
+    height: 402px;
+  }
+  
+  .popup__content {
+    width: 630px;
+    height: auto;
+  }
+
+  .popup__image {
+    width: 350px;
+    border-radius: 10px;
+  }
+
+  .popup__pet-description {
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    gap: 20px;
+  }
+
+  .popup__pet-description p {
+    font-size: 13px;
+    max-width: 98%;
+  }
+
+  .popup__pet-quality-list {
+    gap: 6px;
+  }
+
+  .popup__pet-quality-list li::before {
+    width: 13px;
+  }
 }
 
 @media (max-width: 1076px) {
@@ -812,6 +966,12 @@ h4 {
     grid-template-columns: 1fr 85.5% 1fr;
   }
 
+  .popup__container {
+    top: 42%;
+    left: 80%;
+    transform: translate(-80%, -42%);
+  }
+
   .help {
     padding-right: calc((100vw - 320px)/(768 - 320) * (30 - 15) + 15px);
     padding-left: calc((100vw - 320px)/(768 - 320) * (30 - 15) + 15px);
@@ -864,7 +1024,6 @@ h4 {
 
 @media (width < 768px) {
   .overflow-hidden {
-    position: fixed;
     overflow: hidden;
   }
 
@@ -881,8 +1040,8 @@ h4 {
     position: absolute;
     right: -30px;
     top: -30px;
-    height: 100vh;
-    width: 100vh;
+    height: 1000vw;
+    width: 1000vw;
     display: flex;
     justify-content: end;
     z-index: -1;
@@ -975,6 +1134,42 @@ h4 {
   .transition-backward {
     animation-duration: 0.8s;
   }
+
+  .popup__container {
+    width: 270px;
+    height: 393px;
+    top: 44%;
+    left: 54%;
+    transform: translate(-54%, -44%);
+  }
+
+  .popup__button {
+    right: 0px;
+  }
+
+  .popup__content {
+    width: 240px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup__image {
+    display: none;
+  }
+
+  .popup__pet-name {
+    text-align: center;
+  }
+
+  .popup__pet-description {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .popup__pet-description p {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 714px) {
@@ -1019,6 +1214,12 @@ h4 {
   .help__list {
     max-width: 100%;
     grid-template-columns: repeat(auto-fill, 45%);
+  }
+
+  .popup__container {
+    top: 44%;
+    left: 60%;
+    transform: translate(-60%, -44%);
   }
 }
 
@@ -1137,6 +1338,11 @@ h4 {
     gap: 20px 24px;
   }
 
+  .popup__container {
+    top: 44%;
+    left: 80%;
+    transform: translate(-80%, -44%);
+  }
 
   .help__item span {
     padding-top: 20px;

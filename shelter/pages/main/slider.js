@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', async function () {
   const response = await fetch('../../../shelter/assets/pets.json');
   const pets = await response.json();
   const petCards = pets.map(createCard);
+  const petsPopup = pets.map(createPopup);
+
+  //carousel
 
   const buttonPrev = document.querySelector('.button-arrow_prev');
   const buttonNext = document.querySelector('.button-arrow_next');
+  const petsCarouselWrapper = document.querySelector('.pets__carousel_wrapper')
   const petsCarousel = document.querySelector('.pets__carousel');
   const previousCardsContainer = document.querySelector('.cards_previous');
   const currentCardsContainer = document.querySelector('.cards_current');
@@ -121,6 +125,43 @@ document.addEventListener('DOMContentLoaded', async function () {
     buttonNext.addEventListener('click', moveForward);
   })
 
+  //popup
+
+  const body = document.querySelector('body');
+  const popupWrapper = document.querySelector('.popup__wrapper');
+  const buttonClosePopup = document.querySelector('.popup__button');
+  const popupContent = document.querySelector('.popup__content');
+
+  const renderPopup = (id) => {
+    popupContent.innerHTML = '';
+    popupContent.innerHTML += petsPopup[id - 1];
+  }
+
+  const closeCarousel = () => {
+    popupWrapper.classList.remove('popup__wrapper_active');
+    popupWrapper.classList.remove('blackout');
+    body.classList.remove('overflow-hidden');
+  }
+
+  petsCarouselWrapper.addEventListener('click', (e) => {
+    if (e.target.closest('div').classList.contains('pets__card')) {
+      popupWrapper.classList.add('popup__wrapper_active');
+      popupWrapper.classList.add('blackout');
+      body.classList.add('overflow-hidden');
+      renderPopup(e.target.closest('div').id)
+    }
+  })
+
+  buttonClosePopup.addEventListener('click', () => {
+    closeCarousel();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('popup__wrapper_active') || e.target.classList.contains('popup__container')) {
+      closeCarousel();
+    }
+  })
+
 });
 
 function createCard(pet, id) {
@@ -130,6 +171,25 @@ function createCard(pet, id) {
     <button class="button button_bordered">
       Learn more
     </button>
+  </div>`;
+  return html;
+}
+
+function createPopup(pet) {
+  const html =
+    `<img src=${pet.img} class="popup__image" alt=${pet.name}>
+  <div class="popup__pet-description">
+    <div class="popup__pet-name">
+      <h3>${pet.name}</h3>
+      <h4>${pet.type} - ${pet.breed}</h4>
+    </div>
+    <p>${pet.description}</p>
+    <ul class="popup__pet-quality-list">
+      <li><span class="bold">Age:</span> ${pet.age}</li>
+      <li><span class="bold">Inoculations:</span> ${pet.inoculations}</li>
+      <li><span class="bold">Diseases:</span> ${pet.diseases}</li>
+      <li><span class="bold">Parasites:</span> ${pet.parasites}</li>
+    </ul>
   </div>`;
   return html;
 }
