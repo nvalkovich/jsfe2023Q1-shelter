@@ -298,12 +298,12 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  gap: 59px;
+  gap: 26px;
 }
 
 .pets__slider {
-  display: grid;
-  grid-template-columns: 1fr 90.5% 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -328,21 +328,35 @@ h3 {
   border-color: #FDDCC4;
 }
 
-.pets__cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.pets__carousel_wrapper {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  justify-items: center
+  width: 1070px;
+  height: 500px;
+  overflow: hidden;
+  padding: 0px 10px;
+}
+
+.pets__carousel,
+.pets__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 90px;
+  flex-wrap: nowrap;
+  position: relative;
+  left: 0;
 }
 
 .pets__card {
-  width: 270px;
+  min-width: 270px;
+  height: 435px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #FAFAFA;
   border-radius: 9px;
-  padding-bottom: 33px;
 }
 
 .pets__card span {
@@ -363,6 +377,36 @@ h3 {
 .pets__card:hover .button_bordered {
   background: #FDDCC4;
   border-color: #FDDCC4;
+}
+
+@keyframes move-forward {
+  from {
+    left: 0px;
+  }
+
+  to {
+    left: -1080px;
+  }
+}
+
+.transition-forward {
+  animation-name: move-forward;
+  animation-duration: 2s;
+}
+
+@keyframes move-backward {
+  from {
+    left: 0px
+  }
+
+  to {
+    left: 1080px;
+  }
+}
+
+.transition-backward {
+  animation-name: move-backward;
+  animation-duration: 2s;
 }
 
 .button_bordered {
@@ -574,6 +618,50 @@ h4 {
   align-items: end;
 }
 
+
+@media (max-width: 1200px) {
+  .pets__carousel_wrapper {
+    width: 640px;
+    height: 500px;
+  }
+
+  .pets__carousel,
+  .pets__cards {
+    gap: 40px;
+    left: 0px;
+  }
+
+  @keyframes move-forward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: -620px;
+    }
+  }
+
+  .transition-forward {
+    animation-name: move-forward;
+    animation-duration: 1s;
+  }
+
+  @keyframes move-backward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 620px;
+    }
+  }
+
+  .transition-backward {
+    animation-name: move-backward;
+    animation-duration: 1s;
+  }
+}
+
 @media (max-width: 1076px) {
   .container_footer {
     grid-template-columns: 65% 1fr;
@@ -586,18 +674,6 @@ h4 {
   }
 }
 
-@media (max-width: 1026px) {
-  .pets__cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    justify-items: center
-  }
-
-  .pets__card:nth-child(3) {
-    display: none;
-  }
-}
 
 @media (max-width: 1013px) {
   .container_footer {
@@ -631,11 +707,50 @@ h4 {
     max-width: 60%;
     gap: 20px;
   }
+
+  .pets__carousel_wrapper {
+    width: 600px;
+  }
+
+  .pets__carousel,
+  .pets__cards {
+    gap: 30px;
+  }
+
+  .pets__card:hover {
+    box-shadow: 0px 10px 10px 10px rgba(13, 13, 13, 0.04);
+  }
+
+  @keyframes move-forward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: -600px;
+    }
+  }
+
+  .transition-forward {
+    animation-duration: 1s;
+  }
+
+  @keyframes move-backward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 600px;
+    }
+  }
+
+  .transition-backward {
+    animation-duration: 1s;
+  }
 }
 
 @media (max-width: 769px) {
-
-
   .start-screen__content {
     padding: 30px 30px 0px 30px;
   }
@@ -770,7 +885,7 @@ h4 {
     width: 100vh;
     display: flex;
     justify-content: end;
-    z-index:-1;
+    z-index: -1;
     transition: 0.4s;
   }
 
@@ -828,20 +943,37 @@ h4 {
   .blackout {
     background-color: #00000075;
   }
-}
 
-@media (max-width: 730px) {
-  .pets__slider {
-    grid-template-columns: 1fr 60% 1fr;
-    justify-items: center;
+  .pets__carousel_wrapper {
+    width: 330px;
   }
 
-  .pets__cards {
-    grid-template-columns: 1fr;
+  @keyframes move-forward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: -300px;
+    }
   }
 
-  .pets__card:nth-child(2) {
-    display: none;
+  .transition-forward {
+    animation-duration: 0.8s;
+  }
+
+  @keyframes move-backward {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 300px;
+    }
+  }
+
+  .transition-backward {
+    animation-duration: 0.8s;
   }
 }
 
@@ -868,22 +1000,6 @@ h4 {
 }
 
 @media (max-width: 494px) {
-  .container_pets {
-    align-items: center;
-  }
-
-  .pets__slider {
-    max-width: 60%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 40px;
-  }
-
-  .container_pets {
-    gap: 40px;
-  }
 
   .start-screen__description h2,
   .about__content h3 {
@@ -904,9 +1020,41 @@ h4 {
     max-width: 100%;
     grid-template-columns: repeat(auto-fill, 45%);
   }
+}
 
-  .pets__cards {
+
+@media (max-width: 470px) {
+  .pets {
+    padding: 42px 10px 43px 10px;
+  }
+
+  .container_pets {
+    align-items: center;
+    gap: 37px;
+  }
+
+  .container_pets h3 {
     max-width: 100%;
+  }
+
+  .pets__carousel_wrapper {
+    height: 445px;
+  }
+
+  .pets__slider {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px 70px;
+  }
+
+  .pets__card:hover {
+    box-shadow: 0px 10px 10px 1px rgba(13, 13, 13, 0.04);
+  }
+
+  .pets__carousel {
     order: 0;
   }
 
@@ -986,20 +1134,9 @@ h4 {
   }
 
   .pets__slider {
-    gap: 20px 75px;
+    gap: 20px 24px;
   }
 
-  .pets {
-    padding: 42px 10px 43px 10px;
-  }
-
-  .pets__card span {
-    padding: 31px;
-  }
-
-  .container_pets h3 {
-    max-width: 100%;
-  }
 
   .help__item span {
     padding-top: 20px;
