@@ -682,7 +682,7 @@ section {
     display: flex;
     justify-content: end;
     z-index: -1;
-    transition: 0.4s;
+    transition: 0.5s;
   }
 
   .burger-icon {
