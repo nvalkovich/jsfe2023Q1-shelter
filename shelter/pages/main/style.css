@@ -447,19 +447,20 @@ h3 {
 }
 
 .popup__container {
-  width: 952px;
-  height: 552px;
+  width: 980px;
+  height: auto;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 44%;
-  left: 57%;
-  transform: translate(-57%, -44%);
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .popup__button {
   position: absolute;
-  right: 10px;
+  right: 0;
   top: 0;
   width: 52px;
   height: 52px;
@@ -475,7 +476,7 @@ h3 {
 }
 
 .popup__content {
-  margin-top: 60px;
+  margin: 55px 0px;
   width: 900px;
   height: 500px;
   background: #FAFAFA;
@@ -488,6 +489,7 @@ h3 {
 
 .popup__image {
   width: 500px;
+  border-radius: 10px;
 }
 
 .popup__pet-description,
@@ -781,10 +783,9 @@ h4 {
   }
 
   .popup__container {
-    width: 682px;
-    height: 402px;
+    width: 710px;
   }
-  
+
   .popup__content {
     width: 630px;
     height: auto;
@@ -792,7 +793,6 @@ h4 {
 
   .popup__image {
     width: 350px;
-    border-radius: 10px;
   }
 
   .popup__pet-description {
@@ -966,12 +966,6 @@ h4 {
     grid-template-columns: 1fr 85.5% 1fr;
   }
 
-  .popup__container {
-    top: 42%;
-    left: 80%;
-    transform: translate(-80%, -42%);
-  }
-
   .help {
     padding-right: calc((100vw - 320px)/(768 - 320) * (30 - 15) + 15px);
     padding-left: calc((100vw - 320px)/(768 - 320) * (30 - 15) + 15px);
@@ -1134,41 +1128,17 @@ h4 {
   .transition-backward {
     animation-duration: 0.8s;
   }
+}
 
+@media (max-width: 730px) {
   .popup__container {
-    width: 270px;
-    height: 393px;
-    top: 44%;
-    left: 54%;
-    transform: translate(-54%, -44%);
-  }
-
-  .popup__button {
-    right: 0px;
+    width: calc((100vw - 635px)/(730 - 635) * (710 - 590) + 590px);
   }
 
   .popup__content {
-    width: 240px;
+    width: calc((100vw - 635px)/(730 - 635) * (630 - 510) + 510px);
     height: fit-content;
     display: flex;
-    flex-direction: column;
-  }
-
-  .popup__image {
-    display: none;
-  }
-
-  .popup__pet-name {
-    text-align: center;
-  }
-
-  .popup__pet-description {
-    padding: 10px;
-    gap: 20px;
-  }
-
-  .popup__pet-description p {
-    max-width: 100%;
   }
 }
 
@@ -1194,6 +1164,36 @@ h4 {
   }
 }
 
+@media (max-width: 635px) {
+  .popup__container {
+    width: calc((100vw - 320px)/(767 - 320) * (710 - 300) + 300px);
+  }
+
+  .popup__content {
+    width: calc((100vw - 320px)/(767 - 320) * (630 - 240) + 240px);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup__image {
+    display: none;
+  }
+
+  .popup__pet-name {
+    text-align: center;
+  }
+
+  .popup__pet-description {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .popup__pet-description p {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 494px) {
 
   .start-screen__description h2,
@@ -1214,12 +1214,6 @@ h4 {
   .help__list {
     max-width: 100%;
     grid-template-columns: repeat(auto-fill, 45%);
-  }
-
-  .popup__container {
-    top: 44%;
-    left: 60%;
-    transform: translate(-60%, -44%);
   }
 }
 
@@ -1338,11 +1332,6 @@ h4 {
     gap: 20px 24px;
   }
 
-  .popup__container {
-    top: 44%;
-    left: 80%;
-    transform: translate(-80%, -44%);
-  }
 
   .help__item span {
     padding-top: 20px;
