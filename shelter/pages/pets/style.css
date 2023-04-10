@@ -417,11 +417,6 @@ section {
   .pets__cards {
     max-width: 85%;
   }
-
-  .pets__card:nth-last-child(1),
-  .pets__card:nth-last-child(2) {
-    display: none;
-  }
 }
 
 @media (max-width: 1076px) {
@@ -606,17 +601,8 @@ section {
 @media (max-width: 677px) {
   .pets__cards {
     justify-content: space-around;
-    column-gap: 11px;
+    column-gap: 15px;
     padding-bottom: 2px;
-  }
-}
-
-@media (max-width: 631px) {
-
-  .pets__card:nth-last-child(3),
-  .pets__card:nth-last-child(4),
-  .pets__card:nth-last-child(5) {
-    display: none;
   }
 }
 

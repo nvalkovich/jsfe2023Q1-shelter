@@ -9,6 +9,7 @@
   <link rel="icon" type="Image/x-icon" href="../../assets/favicon/favicon.svg">
   <script src="../../index.js"></script>
   <script src="script.js"></script>
+  <script src="pagination.js"></script>
   <title>Shelter | Our pets</title>
 </head>
 
@@ -54,71 +55,15 @@
         <div class="container container_pets">
           <h3>Our friends who <br> are looking for a house</h3>
           <div class="pets__cards">
-            <div class="pets__card">
-              <img src="../../assets/images/pets-katrine.png" alt="Katrine photo">
-              <span>Katrine</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-jennifer.png" alt="Jennifer">
-              <span>Jennifer</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-woody.png" alt="Woody">
-              <span>Woody</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-sophia.png" alt="Sophia">
-              <span>Sophia</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-timmy.png" alt="Timmy">
-              <span>Timmy</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-charly.png" alt="Charly">
-              <span>Charly</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-scarlet.png" alt="Scarlett">
-              <span>Scarlett</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
-            <div class="pets__card">
-              <img src="../../assets/images/pets-freddie.png" alt="Freddie">
-              <span>Freddie</span>
-              <button class="button button_bordered">
-                Learn more
-              </button>
-            </div>
           </div>
           <div class="pets__pagination">
-            <button class="button-paginator button-paginator_inactive" disabled>
+            <button class="button-paginator button-paginator_first button-paginator_inactive">
               &#60;&#60;</button>
-            <button class="button-paginator button-paginator_inactive" disabled>
+            <button class="button-paginator button-paginator_prev button-paginator_inactive">
               &#60;</button>
-            <button class="button-paginator button-paginator_current">1</button>
-            <button class="button-paginator button-paginator_active"> &#62;</button>
-            <button class="button-paginator button-paginator_active">&#62;&#62;</button>
+            <button class="button-paginator current-page button-paginator_current">1</button>
+            <button class="button-paginator button-paginator_next button-paginator_active"> &#62;</button>
+            <button class="button-paginator button-paginator_last button-paginator_active">&#62;&#62;</button>
           </div>
         </div>
       </section>
