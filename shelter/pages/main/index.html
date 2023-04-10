@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="Image/x-icon" href="../../assets/favicon/favicon.svg">
   <script src="../../index.js"></script>
+  <script src="burger.js"></script>
+  <script src="slider.js"></script>
   <title>Shelter</title>
 </head>
 
@@ -22,10 +24,20 @@
               <span class="logo__subtitle">Shelter for pets in Boston</span>
             </a>
           </div>
-          <div class="burger-menu">
-            <div class="burger__line"></div>
-            <div class="burger__line"></div>
-            <div class="burger__line"></div>
+          <div class="burger-icon">
+            <div class="burger-icon__line"></div>
+            <div class="burger-icon__line"></div>
+            <div class="burger-icon__line"></div>
+          </div>
+          <div class="burger burger-wrapper">
+            <div class="burger__burger-menu">
+              <ul class="burger-menu__list">
+                <li><a class="burger-menu__link burger-menu__link_active">About the shelter</a></li>
+                <li><a href="../pets/index.html" class="burger-menu__link">Our pets</a></li>
+                <li><a href="#help" class="burger-menu__link">Help the shelter</a></li>
+                <li><a href="#contacts" class="burger-menu__link">Contacts</a></li>
+              </ul>
+            </div>
           </div>
           <nav class="header__navigation">
             <ul class="navigation__list">
@@ -84,27 +96,15 @@
           <h3>Our friends who <br> are looking for a house</h3>
           <div class="pets__slider">
             <button class="button-arrow button-arrow_prev"></button>
-            <div class="pets__cards">
-              <div class="pets__card">
-                <img src="../../assets/images/pets-katrine.png" alt="Katrine photo">
-                <span>Katrine</span>
-                <button class="button button_bordered">
-                  Learn more
-                </button>
-              </div>
-              <div class="pets__card">
-                <img src="../../assets/images/pets-jennifer.png" alt="Jennifer photo">
-                <span>Jennifer</span>
-                <button class="button button_bordered">
-                  Learn more
-                </button>
-              </div>
-              <div class="pets__card">
-                <img src="../../assets/images/pets-woody.png" alt="Woody photo">
-                <span>Woody</span>
-                <button class="button button_bordered">
-                  Learn more
-                </button>
+            <div class="pets__carousel_wrapper">
+              <div class="pets__carousel">
+                <div class="pets__cards cards_previous">
+                </div>
+                <div class="pets__cards cards_current cards_active">
+
+                </div>
+                <div class="pets__cards cards_next">
+                </div>
               </div>
             </div>
             <button class="button-arrow button-arrow_next"></button>
@@ -218,6 +218,13 @@
         </div>
       </div>
     </footer>
+  </div>
+  <div class="popup__wrapper">
+    <div class="popup__container">
+      <div class="popup__button"></div>
+      <div class="popup__content">
+      </div>
+    </div>
   </div>
 </body>
 
